@@ -1,0 +1,43 @@
+package be.abis.exercise.test;
+
+import be.abis.exercise.exception.SalaryTooLowException;
+import be.abis.exercise.model.Person;
+import be.abis.exercise.service.AbisPaymentService;
+import be.abis.exercise.service.PaymentService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+public class PaymentServiceTest {
+
+    PaymentService ps;
+
+    @Mock
+    Person person;
+
+    @BeforeEach
+    public void setUp(){
+        ps = new AbisPaymentService();
+    }
+
+    @Test
+    public void payingSalaryUnder1500ShouldThrowException() throws SalaryTooLowException {
+        when(person.calculateNetSalary()).thenThrow(SalaryTooLowException.class);
+        assertThrows(SalaryTooLowException.class,()->ps.paySalary(person));
+    }
+
+    @Test
+    public void payingSalaryToJohnWritesSomething() throws SalaryTooLowException {
+        when(person.calculateNetSalary()).thenReturn(2000.00);
+        when(person.getFirstName()).thenReturn("John");
+        ps.paySalary(person);
+    }
+
+
+}
