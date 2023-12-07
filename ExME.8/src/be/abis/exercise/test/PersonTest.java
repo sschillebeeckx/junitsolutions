@@ -71,7 +71,6 @@ public class PersonTest {
         assertThat(sentence, startsWith("Person"));
     }
 
-
    @Test
    @DisplayName("Test whether net salary of Belgian Person is calculated correctly")
    public void calculateNetSalaryOfBelgianPersonUsingMockCompany() throws SalaryTooLowException {

@@ -52,5 +52,4 @@ public class PaymentServiceTest {
         //verify(securityChecker,atLeastOnce()).isAbisEmployee(person);
     }
 
-
 }

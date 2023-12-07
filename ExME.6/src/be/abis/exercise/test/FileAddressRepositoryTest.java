@@ -70,7 +70,6 @@ public class FileAddressRepositoryTest {
         verify(address).writeToFile(pathCaptor.capture());
         Path usedPath= pathCaptor.getValue();
         assertEquals("somefile3.txt",usedPath.getFileName().toString());
-
     }
 
 

@@ -9,6 +9,10 @@ public class AbisPaymentService implements PaymentService{
 
     SecurityChecker sc=new SecurityChecker();
 
+    public void setSc(SecurityChecker sc) {
+        this.sc = sc;
+    }
+
     public void paySalary(Person person) throws SalaryTooLowException {
         if (sc.isAbisEmployee(person)) {
             double salary = person.calculateNetSalary();
