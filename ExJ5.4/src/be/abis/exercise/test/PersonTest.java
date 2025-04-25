@@ -15,7 +15,7 @@ public class PersonTest {
     @Test
     void person1ShouldBe42YearsOld() throws PersonShouldBeAdultException {
         int birthYear = LocalDate.now().minusYears(42).getYear();
-        Person p1 = new Person(1,"Ann","Smits", LocalDate.of(birthYear, 6, 28));
+        Person p1 = new Person(1,"Ann","Smits", LocalDate.of(birthYear, 3, 28));
         assertThat(p1.calculateAge(), is(equalTo(42)));
     }
 }

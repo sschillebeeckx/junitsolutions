@@ -20,7 +20,7 @@ public class PersonTest {
     @BeforeEach
     void setUp(){
         int birthYear = LocalDate.now().minusYears(42).getYear();
-        p1 = new Person(1,"Ann","Smits", LocalDate.of(birthYear, 6, 28));
+        p1 = new Person(1,"Ann","Smits", LocalDate.of(birthYear, 3, 28));
     }
 
     @Test
