@@ -32,7 +32,7 @@ public class PersonTest {
     @BeforeEach
     void setUp(){
         int birthYear = LocalDate.now().minusYears(42).getYear();
-        p1 = new Person(1,"Ann","Smits", LocalDate.of(birthYear, 6, 28));
+        p1 = new Person(1,"Ann","Smits", LocalDate.of(birthYear, 3, 28));
         p3 = new Person(3, "Sandy", "Schillebeeckx", LocalDate.of(1978, 4, 10),mockCompany);
     }
 
